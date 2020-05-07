@@ -22,9 +22,9 @@ order by DataDate desc
 LIMIT 1
 ";
 
-            DataTable dt = new DataTable();
+            DataTable dt          = new DataTable();
             using (var connection = new SQLiteConnection(CommonConst.ConnectionString))
-            using (var command = new SQLiteCommand(sql, connection))
+            using (var command    = new SQLiteCommand(sql, connection))
             {
                 connection.Open();
 

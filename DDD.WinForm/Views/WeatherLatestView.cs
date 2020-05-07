@@ -23,7 +23,7 @@ namespace DDD.WinForm
         private void LatestButton_Click(object sender, EventArgs e)
         {
             var dt = WeatherSQLite.GetLatest(Convert.ToInt32(AreaIdTextBox.Text));
-            if(dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
                 DataDateLabel.Text    = dt.Rows[0]["DataDate"].ToString();
                 ConditionLabel.Text   = dt.Rows[0]["Condition"].ToString();
