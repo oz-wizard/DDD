@@ -1,4 +1,5 @@
-﻿using DDD.Domain.ValueObjects;
+﻿using DDD.Domain.Helpers;
+using DDD.Domain.ValueObjects;
 using DDD.WinForm.Common;
 using DDD.WinForm.Common.Data;
 using System;
@@ -28,8 +29,8 @@ namespace DDD.WinForm
             {
                 DataDateLabel.Text    = dt.Rows[0]["DataDate"].ToString();
                 ConditionLabel.Text   = dt.Rows[0]["Condition"].ToString();
-                TemperatureLabel.Text =
-                    CommonFunc.RoundString(Convert.ToSingle(dt.Rows[0]["Temperature"]), Temperature.DecimalPoint) + Temperature.UnitName;
+                TemperatureLabel.Text = 
+                    FloatHelper.RoundString(Convert.ToSingle(dt.Rows[0]["Temperature"]), Temperature.DecimalPoint) + Temperature.UnitName;
             }
         }
     }
